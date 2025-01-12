@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redhat Openshift (A Container Platform)</title>
+    <link>https://example.org/index.html</link>
+    <description>Overview of OpenShift OpenShift is a comprehensive enterprise-grade container orchestration platform that enables organizations to build, deploy, and manage containerized applications efficiently. It is based on Kubernetes and provides additional features to simplify and enhance the deployment process, making it suitable for production-grade environments.&#xA;OpenShift is a layer of Red Hat components that sit on top of a Kubernetes cluster Using OpenShift makes it easier to install, configure, network, and manage applications composed of containers.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenShift Overview</title>
+      <link>https://example.org/first-chapter/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/first-chapter/index.html</guid>
+      <description>OpenShift Licensing Models: Plus, Essentials, and Core Offerings Red Hat offers multiple versions of OpenShift that come with varying levels of functionality and features. These are primarily OpenShift Container Platform and OpenShift Plus, which are bundled with additional features. Below is a breakdown of these offerings.&#xA;1. OpenShift Container Platform (OCP) This is the core product and includes the essential components required to deploy and manage OpenShift clusters on-premises or in the cloud. It includes:</description>
+    </item>
+    <item>
+      <title>Openshift Alternatives</title>
+      <link>https://example.org/openshift-alternatives/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/openshift-alternatives/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

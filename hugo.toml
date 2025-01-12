@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Redhat Openshift (A Container Platform)'
+theme = 'hugo-theme-relearn'

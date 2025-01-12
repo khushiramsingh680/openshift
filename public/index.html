@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.4">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Overview of OpenShift OpenShift is a comprehensive enterprise-grade container orchestration platform that enables organizations to build, deploy, and manage containerized applications efficiently. It is based on Kubernetes and provides additional features to simplify and enhance the deployment process, making it suitable for production-grade environments.
+OpenShift is a layer of Red Hat components that sit on top of a Kubernetes cluster Using OpenShift makes it easier to install, configure, network, and manage applications composed of containers.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Redhat Openshift (A Container Platform)">
+    <meta name="twitter:description" content="Overview of OpenShift OpenShift is a comprehensive enterprise-grade container orchestration platform that enables organizations to build, deploy, and manage containerized applications efficiently. It is based on Kubernetes and provides additional features to simplify and enhance the deployment process, making it suitable for production-grade environments.
+OpenShift is a layer of Red Hat components that sit on top of a Kubernetes cluster Using OpenShift makes it easier to install, configure, network, and manage applications composed of containers.">
+    <meta property="og:url" content="https://example.org/index.html">
+    <meta property="og:site_name" content="Redhat Openshift (A Container Platform)">
+    <meta property="og:title" content="Redhat Openshift (A Container Platform)">
+    <meta property="og:description" content="Overview of OpenShift OpenShift is a comprehensive enterprise-grade container orchestration platform that enables organizations to build, deploy, and manage containerized applications efficiently. It is based on Kubernetes and provides additional features to simplify and enhance the deployment process, making it suitable for production-grade environments.
+OpenShift is a layer of Red Hat components that sit on top of a Kubernetes cluster Using OpenShift makes it easier to install, configure, network, and manage applications composed of containers.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Redhat Openshift (A Container Platform)">
+    <meta itemprop="description" content="Overview of OpenShift OpenShift is a comprehensive enterprise-grade container orchestration platform that enables organizations to build, deploy, and manage containerized applications efficiently. It is based on Kubernetes and provides additional features to simplify and enhance the deployment process, making it suitable for production-grade environments.
+OpenShift is a layer of Red Hat components that sit on top of a Kubernetes cluster Using OpenShift makes it easier to install, configure, network, and manage applications composed of containers.">
+    <meta itemprop="wordCount" content="634">
+    <title>Redhat Openshift (A Container Platform)</title>
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Redhat Openshift (A Container Platform)">
+    <link href="/css/fontawesome-all.min.css?1736701717" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736701717" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736701717" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736701717" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736701717" rel="stylesheet">
+    <link href="/css/theme.min.css?1736701717" rel="stylesheet">
+    <link href="/css/format-html.min.css?1736701717" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='.';
+      window.relearn.relBaseUri='.';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#ocp01imagesocp02png"><img src="/images/ocp02.png" alt="ocp01"></a></li>
+    <li><a href="#key-components"><strong>Key Components</strong></a></li>
+    <li><a href="#key-features"><strong>Key Features</strong></a></li>
+    <li><a href="#deployment-options"><strong>Deployment Options</strong></a></li>
+    <li><a href="#use-cases"><strong>Use Cases</strong></a></li>
+    <li><a href="#advantages-of-openshift"><strong>Advantages of OpenShift</strong></a></li>
+    <li><a href="#challenges"><strong>Challenges</strong></a></li>
+    <li><a href="#conclusion"><strong>Conclusion</strong></a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-left"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/first-chapter/index.html" title="OpenShift Overview (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable home" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="home">
+  <header class="headline">
+  </header>
+
+<h1 id="redhat-openshift-a-container-platform">Redhat Openshift (A Container Platform)</h1>
+
+<p><a href="#R-image-c54780f49577de3315a3c6e97f2f37ec" class="lightbox-link"><img alt="ocp01" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/ocp01.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c54780f49577de3315a3c6e97f2f37ec"><img alt="ocp01" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/ocp01.png"></a></p>
+<h1 id="overview-of-openshift"><strong>Overview of OpenShift</strong></h1>
+<p>OpenShift is a comprehensive enterprise-grade container orchestration platform that enables organizations to build, deploy, and manage containerized applications efficiently. It is based on Kubernetes and provides additional features to simplify and enhance the deployment process, making it suitable for production-grade environments.</p>
+<p>OpenShift is a layer of Red Hat components that sit on top of a Kubernetes cluster  Using OpenShift makes it easier to install, configure, network, and manage applications composed of containers.</p>
+<h2 id="ocp01imagesocp02png"><a href="#R-image-0e92607c6ca91debc3130af12686ee79" class="lightbox-link"><img alt="ocp01" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/ocp02.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0e92607c6ca91debc3130af12686ee79"><img alt="ocp01" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/ocp02.png"></a></h2>
+<h2 id="key-components"><strong>Key Components</strong></h2>
+<ol>
+<li>
+<p><strong>OpenShift Container Platform (OCP)</strong></p>
+<ul>
+<li>The flagship product that provides a Kubernetes-based platform with enterprise-grade features.</li>
+<li>Includes Red Hat Enterprise Linux CoreOS (RHCOS) as the default operating system for the control plane and worker nodes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kubernetes</strong></p>
+<ul>
+<li>OpenShift is built on Kubernetes and extends its capabilities with additional tools and features.</li>
+</ul>
+</li>
+<li>
+<p><strong>Source-to-Image (S2I)</strong></p>
+<ul>
+<li>A unique feature of OpenShift that allows developers to build container images directly from source code.</li>
+</ul>
+</li>
+<li>
+<p><strong>Operator Framework</strong></p>
+<ul>
+<li>Facilitates managing applications as Operators, automating tasks like installation, scaling, and upgrades.</li>
+</ul>
+</li>
+<li>
+<p><strong>OpenShift Pipelines</strong></p>
+<ul>
+<li>A CI/CD solution based on Tekton for creating and managing containerized build and deployment pipelines.</li>
+</ul>
+</li>
+<li>
+<p><strong>Service Mesh</strong></p>
+<ul>
+<li>Built on Istio, OpenShift Service Mesh provides traffic management, security, and observability for microservices.</li>
+</ul>
+</li>
+<li>
+<p><strong>OpenShift Virtualization</strong></p>
+<ul>
+<li>Integrates virtual machines (VMs) with containers for hybrid workloads.</li>
+</ul>
+</li>
+<li>
+<p><strong>Red Hat Quay</strong></p>
+<ul>
+<li>A container registry for managing and storing container images securely.</li>
+</ul>
+</li>
+<li>
+<p><strong>Red Hat Advanced Cluster Management (RHACM)</strong></p>
+<ul>
+<li>Manages multiple OpenShift clusters across hybrid and multi-cloud environments.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="key-features"><strong>Key Features</strong></h2>
+<ol>
+<li>
+<p><strong>Enterprise Kubernetes</strong></p>
+<ul>
+<li>Built on Kubernetes, offering automated scaling, self-healing, and efficient resource management.</li>
+</ul>
+</li>
+<li>
+<p><strong>Developer-Friendly Tools</strong></p>
+<ul>
+<li>A robust web console and CLI for managing applications.</li>
+<li>Integrated developer tools for CI/CD, such as Jenkins and OpenShift Pipelines.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security</strong></p>
+<ul>
+<li>Built-in role-based access control (RBAC).</li>
+<li>Image scanning, network policies, and enhanced security for containerized applications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-Cloud and Hybrid Cloud Support</strong></p>
+<ul>
+<li>Supports deployment on-premises, in public clouds (AWS, Azure, GCP), and hybrid environments.</li>
+</ul>
+</li>
+<li>
+<p><strong>Automation</strong></p>
+<ul>
+<li>Automates application builds, deployments, monitoring, and scaling.</li>
+<li>Supports Infrastructure as Code (IaC) using tools like Ansible and Terraform.</li>
+</ul>
+</li>
+<li>
+<p><strong>Networking</strong></p>
+<ul>
+<li>Provides an integrated Software-Defined Network (SDN) for efficient communication between containers and pods.</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitoring and Logging</strong></p>
+<ul>
+<li>Offers built-in monitoring tools like Prometheus and Grafana.</li>
+<li>Centralized logging with Elastic Stack or third-party integrations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Scalability</strong></p>
+<ul>
+<li>Easily scales applications horizontally or vertically to handle varying workloads.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="deployment-options"><strong>Deployment Options</strong></h2>
+<ol>
+<li>
+<p><strong>On-Premises</strong></p>
+<ul>
+<li>OpenShift can be deployed on bare metal or virtualized environments such as VMware, OpenStack, or RHV.</li>
+</ul>
+</li>
+<li>
+<p><strong>Public Cloud</strong></p>
+<ul>
+<li>Supports AWS, Microsoft Azure, Google Cloud Platform (GCP), and IBM Cloud.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hybrid Cloud</strong></p>
+<ul>
+<li>Allows applications to span across on-premises and cloud environments seamlessly.</li>
+</ul>
+</li>
+<li>
+<p><strong>Managed Services</strong></p>
+<ul>
+<li>Red Hat OpenShift Service on AWS (ROSA).</li>
+<li>Azure Red Hat OpenShift (ARO).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="use-cases"><strong>Use Cases</strong></h2>
+<ol>
+<li>
+<p><strong>Application Modernization</strong></p>
+<ul>
+<li>Migrate monolithic applications to containerized microservices.</li>
+</ul>
+</li>
+<li>
+<p><strong>DevOps Enablement</strong></p>
+<ul>
+<li>Automate CI/CD pipelines to accelerate software development.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hybrid Cloud Strategies</strong></p>
+<ul>
+<li>Unified platform for managing workloads across multiple environments.</li>
+</ul>
+</li>
+<li>
+<p><strong>Edge Computing</strong></p>
+<ul>
+<li>Deploy lightweight OpenShift clusters at the edge for low-latency applications.</li>
+</ul>
+</li>
+<li>
+<p><strong>AI/ML Workloads</strong></p>
+<ul>
+<li>Manage AI/ML model training and deployment with integrated tools like OpenShift Data Science.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="advantages-of-openshift"><strong>Advantages of OpenShift</strong></h2>
+<ol>
+<li>
+<p><strong>Enterprise Support</strong></p>
+<ul>
+<li>Backed by Red Hat&rsquo;s 24/7 support for mission-critical applications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Ease of Use</strong></p>
+<ul>
+<li>Intuitive web interface, CLI, and automation tools simplify complex workflows.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extensibility</strong></p>
+<ul>
+<li>Extends Kubernetes with integrated tools and features for developers and administrators.</li>
+</ul>
+</li>
+<li>
+<p><strong>Comprehensive Ecosystem</strong></p>
+<ul>
+<li>Integrates with popular DevOps and cloud tools, enhancing productivity and flexibility.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security and Compliance</strong></p>
+<ul>
+<li>Built-in features for meeting enterprise security and compliance requirements.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="challenges"><strong>Challenges</strong></h2>
+<ol>
+<li>
+<p><strong>Learning Curve</strong></p>
+<ul>
+<li>OpenShift&rsquo;s extensive features and tools can be complex for beginners.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cost</strong></p>
+<ul>
+<li>Requires licensing fees, which may be a concern for smaller organizations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Complexity</strong></p>
+<ul>
+<li>Managing hybrid and multi-cloud environments with OpenShift can be intricate without expertise.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>OpenShift is an ideal choice for enterprises seeking a robust and secure platform for managing containerized applications. It simplifies Kubernetes while enhancing its capabilities, making it suitable for modern DevOps and cloud-native strategies. With features like S2I, Operators, and multi-cloud support, OpenShift stands out as a comprehensive solution for application deployment and management.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            Redhat Openshift (A Container Platform)
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1736701717";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1736701717" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736701717" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736701717" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736701717" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736701717" defer></script>
+        <script src="/js/search.js?1736701717" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/first-chapter/index.html"><a class="padding" href="/first-chapter/index.html">OpenShift Overview</a></li>
+            <li class="" data-nav-id="/openshift-alternatives/index.html"><a class="padding" href="/openshift-alternatives/index.html">Openshift Alternatives</a></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1736701717" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736701717" defer></script>
+    <script src="/js/theme.js?1736701717" defer></script>
+  </body>
+</html>
